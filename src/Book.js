@@ -2,6 +2,9 @@ import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 import BookShelfChanger from './BookShelfChanger';
 
+/**
+* @description Represents a book. It shows all of its info as well as a BookShelfChanger
+*/
 class Book extends Component {
 
   static propTypes = {
@@ -21,14 +24,20 @@ class Book extends Component {
     onShelfChange: ()=>{}
   }
 
+  /**
+   * @description Notifies the parent that the current book has changed its shelf
+   * @param {string} shelf - the shelf selected for the book
+   */
   handleShelfChange(shelf){
     this.props.onShelfChange(this.props.book, shelf);
   }
 
   render() {
     const {book} = this.props;
-
+    
     if(!book) return <div></div>;
+    
+    book.authors = book.authors || [];
 
     return(
       <div className="book">

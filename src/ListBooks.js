@@ -17,6 +17,10 @@ class ListBooks extends Component {
     {name: 'Read', key:'read'},
   ]
   
+  /**
+   * @description Categorizes an array of books into different shelves
+   * @param {array} bookList - of the current books to be categorized by shelves
+   */
   getCategorizedList(bookList){
     let categorizedList = {};
     bookList.forEach(book => {

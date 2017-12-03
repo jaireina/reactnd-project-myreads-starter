@@ -20,7 +20,7 @@ class BookShelf extends Component {
 
   render() {
     const {books} = this.props;
-    let htmlToRender = <h3>This shelf is empty :(</h3>;
+    let htmlToRender = <h3>Nothing found here :(</h3>;
 
     if(books.length>0){
       htmlToRender = books.map(book=>(
